@@ -11,10 +11,19 @@ class HomePageBar extends StatelessWidget {
       padding: EdgeInsets.all(25),
       child: Row(
         children: [
-          Icon(
-            Icons.sort,
-            size: 30,
-            color: Color(0xFF330433),
+          Badge(
+            badgeColor: Colors.white,
+            padding: EdgeInsets.all(0),
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, "menu");
+              },
+              child: Icon(
+                Icons.sort,
+                size: 32,
+                color: Color(0xFF330433),
+              ),
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(
@@ -32,7 +41,12 @@ class HomePageBar extends StatelessWidget {
           Badge(
             badgeColor: Colors.red,
             padding: EdgeInsets.all(7),
-            badgeContent: Text("3",style: TextStyle(color: Colors.white,),),
+            badgeContent: Text(
+              "3",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
             child: InkWell(
               onTap: () {
                 Navigator.pushNamed(context, "cartPage");
@@ -41,7 +55,6 @@ class HomePageBar extends StatelessWidget {
                 Icons.shopping_bag_outlined,
                 size: 32,
                 color: Color(0xFF330433),
-
               ),
             ),
           )

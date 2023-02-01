@@ -4,6 +4,7 @@ import 'package:untitled1/Page/CategoriesWidget.dart';
 import 'package:untitled1/Page/HomePageBar.dart';
 import 'package:untitled1/Page/ItemsWidget.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:untitled1/Widget/MenuBar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MenuBar(),
       body: ListView(
         children: [
           HomePageBar(),
@@ -87,16 +89,16 @@ class HomePage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.transparent,
-        onTap: (index){},
-        height: 60,
-        color:Color(0xFF330433),
+          backgroundColor: Colors.transparent,
+          onTap: (index) {},
+          height: 60,
+          color: Color(0xFF330433),
           items: [
-        Icon(
-          Icons.home,
-          size: 30,
-          color: Colors.white,
-        ),
+            Icon(
+              Icons.home,
+              size: 30,
+              color: Colors.white,
+            ),
             Icon(
               Icons.category_sharp,
               size: 30,
@@ -112,7 +114,7 @@ class HomePage extends StatelessWidget {
               size: 30,
               color: Colors.white,
             ),
-      ]),
+          ]),
     );
   }
 }
